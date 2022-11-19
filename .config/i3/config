@@ -5,6 +5,9 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 font pango:DejaVu Sans Mono 12
 
+# === [ BAR ] === #
+exec_always --no-startup-id polybar
+
 # === [ KEYBINDS ] === #
 
 # mod+return - start a terminal

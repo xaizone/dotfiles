@@ -46,8 +46,11 @@ bindsym $mod+Shift+Right move right
 # mod+f - enter fullscreen on focused window
 bindsym $mod+f fullscreen toggle
 
-# mod+t - toggle splitting
+# mod+t - toggle layout split
 bindsym $mod+t layout toggle split
+
+# mod+v - toggle new window splitting
+bindsym $mod+v split toggle
 
 # mod+g - toggle floating / tiling
 bindsym $mod+g floating toggle

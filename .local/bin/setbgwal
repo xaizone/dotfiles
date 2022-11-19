@@ -1,0 +1,14 @@
+#!/bin/sh
+
+dir=~/image/wallpaper
+
+if [ -z "$1" ]; then
+  bg="$(find "$dir" -type f -name "*.jpg" -o -name "*.png" | shuf -n1)"
+else
+  bg="$1"
+fi
+
+convert "$bg" ~/.local/share/bg.jpg
+feh --bg-scale --no-fehbg ~/.local/share/bg.jpg
+wal -c
+wal -i ~/.local/share/bg.jpg

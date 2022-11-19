@@ -1,0 +1,14 @@
+#!/bin/bash
+
+PARAMS=('-m 6 -lossless -mt')
+
+if [ $# -ne 0 ]; then
+	PARAMS=$@;
+fi
+
+cd $(pwd)
+
+for FILE in *.{jpg,jpeg,tif,tiff,png}; do 
+    cwebp $PARAMS "$FILE" -o "${FILE%.*}".webp;
+    rm -f $FILE
+done

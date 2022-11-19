@@ -1,0 +1,17 @@
+# LS
+alias ls='ls --color=always'
+alias la='ls -a --color=always'
+alias lal='ls -al --color=always'
+
+# PACMAN
+alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
+
+# FLAGS
+alias df='df -h'
+alias du='du -h'
+alias free='free -m'
+alias grep='grep --color=auto'
+
+# GIT
+alias lg='lazygit'
+alias dots='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'

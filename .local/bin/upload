@@ -3,15 +3,14 @@
 if [ -n "$1" ]; then
     FILE=$1;
 else
-    echo "no file provided" && exit
+    echo "no file provided" && exit 1
 fi
 
 URL=$(curl --fail -F file=@"$FILE" -- https://0x0.st) ; EXIT=$?
 
-echo -n "$URL" | xclip -sel c
-
 if [ $EXIT -eq 0 ]; then
 	echo "$URL"
+        echo -n "$URL" | xclip -sel c
 	notify-send "upload" "$FILE successfully uploaded. $URL"
 else
         echo "failed: $EXIT"

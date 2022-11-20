@@ -9,6 +9,6 @@ else
 fi
 
 convert "$bg" ~/.local/share/bg.jpg
-feh --no-fehbg --bg-scale ~/.local/share/bg.jpg
+xwallpaper --zoom ~/.local/share/bg.jpg
 wal -c
 wal -n -q -i ~/.local/share/bg.jpg

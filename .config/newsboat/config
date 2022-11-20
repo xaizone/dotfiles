@@ -9,9 +9,9 @@ color listfocus_unread yellow default bold
 color info red black bold
 color article white default bold
 
-macro p set browser "i3 exec mpv"; open-in-browser; set browser firefox
-macro i set browser "i3 exec feh"; open-in-browser; set browser firefox
-macro c set browser "echo %u | xclip -r -sel c" ; open-in-browser ; set browser firefox
+browser linkhandler
+macro p set browser "setsid -f mpv"; open-in-browser; set browser linkhandler
+macro c set browser "echo %u | xclip -r -sel c" ; open-in-browser ; set browser linkhandler
 
 highlight all "---.*---" yellow
 highlight feedlist ".*(0/0))" black

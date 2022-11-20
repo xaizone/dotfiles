@@ -1,16 +1,25 @@
-# blogs
+"--- blogs ---"
 https://xaizone.eu/rss.xml
 https://termer.net/blog/rss.xml friends
+" "
 
-# youtube
+"--- gaming news ---"
+https://www.vortex.cz/feed/rss/ gaming news
+https://indian-tv.cz/atom.xml gaming news
+" "
+
+"--- youtube ---"
 https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "~Luke Smith (YouTube)" youtube tech
-https://www.youtube.com/feeds/videos.xml?channel_id=UCtMVHI3AJD4Qk4hcbZnI9ZQ "~SomeOrdinaryGamers (YouTube)" youtube games tech
-https://www.youtube.com/feeds/videos.xml?channel_id=UCHSI8erNrN6hs3sUK6oONLA "~ilmango (YouTube)" youtube games 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCtMVHI3AJD4Qk4hcbZnI9ZQ "~SomeOrdinaryGamers (YouTube)" youtube gaming tech
+https://www.youtube.com/feeds/videos.xml?channel_id=UCHSI8erNrN6hs3sUK6oONLA "~ilmango (YouTube)" youtube gaming 
 https://www.youtube.com/feeds/videos.xml?channel_id=UC7YOGHUfC1Tb6E4pudI9STA "~Mental Outlaw (YouTube)" youtube tech
 https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg "~DistroTube (YouTube)" youtube tech
+https://www.youtube.com/feeds/videos.xml?channel_id=UCylGUf9BvQooEFjgdNudoQg "~The Linux Cast (YouTube)" youtube tech
+" "
 
-# twitter
-https://rss-bridge.org/bridge01/?action=display&bridge=TwitterBridge&context=By+username&u=thephantomlex&norep=on&noretweet=on&nopinned=on&nopic=on&format=Atom twitter games
+"--- twitter ---"
+https://rss-bridge.org/bridge01/?action=display&bridge=TwitterBridge&context=By+username&u=thephantomlex&norep=on&noretweet=on&nopinned=on&nopic=on&format=Atom twitter gaming
 https://rss-bridge.org/bridge01/?action=display&bridge=TwitterBridge&context=By+username&u=kalvarju&norep=on&noretweet=on&nopinned=on&nopic=on&format=Atom friends twitter
+" "
 
-# unsorted
+"--- unsorted ---"

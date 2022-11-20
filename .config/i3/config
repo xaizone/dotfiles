@@ -1,6 +1,10 @@
 # === [ GENERAL SETTINGS ] === #
 
 set $mod Mod4
+set $browser firefox
+set $terminal alacritty
+set $menu "rofi -show run"
+
 floating_modifier $mod
 tiling_drag modifier titlebar
 font pango:DejaVu Sans Mono 12
@@ -11,10 +15,10 @@ exec_always --no-startup-id polybar
 # === [ KEYBINDS ] === #
 
 # mod+return - start a terminal
-bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
+bindsym $mod+Return exec --no-startup-id $terminal
 
 # mod+d - run rofi
-bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+d exec --no-startup-id $menu
 
 # mod+q - kill focused window
 bindsym $mod+q kill
@@ -94,6 +98,17 @@ bindsym $mod+Shift+r restart
 
 # mod+shift+escape - exit i3
 bindsym $mod+Shift+Escape exec --no-startup-id "i3-msg exit"
+
+# === [ KEYBINDS - APPLICATIONS ] === #
+
+# mod+w - open browser
+bindsym $mod+w exec --no-startup-id $browser
+
+# mod+e - open newsboat
+bindsym $mod+e exec --no-startup-id $terminal -e newsboat
+
+# ctrl+shift+escape - open htop
+bindsym Ctrl+Shift+Escape exec --no-startup-id $terminal -e htop
 
 # === [ ASSIGN WORKSPACE ] === #
 

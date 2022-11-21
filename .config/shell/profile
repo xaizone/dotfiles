@@ -1,5 +1,5 @@
 export EDITOR="nano"
-export TERMINAL="alacritty"
+export TERMINAL="st"
 export BROWSER="firefox"
 
 export XDG_CONFIG_HOME="$HOME/.config"

@@ -10,3 +10,5 @@ fi
 
 convert "$bg" ~/.local/share/bg.jpg
 xwallpaper --zoom ~/.local/share/bg.jpg
+wal -c
+wal -n -q -i ~/.local/share/bg.jpg

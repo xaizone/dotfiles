@@ -3,7 +3,7 @@
 auto-reload yes
 
 color listnormal cyan default
-color listfocus black yellow standout bold
+color listfocus yellow default bold
 color listnormal_unread blue default
 color listfocus_unread yellow default bold
 color info red black bold

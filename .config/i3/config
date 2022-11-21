@@ -2,7 +2,7 @@
 
 set $mod Mod4
 set $browser firefox
-set $terminal alacritty
+set $terminal st
 set $menu "rofi -show run"
 
 floating_modifier $mod

@@ -6,7 +6,7 @@ else
     echo "no file provided" && exit 1
 fi
 
-URL=$(curl --fail -F file=@"$FILE" -- https://0x0.st) ; EXIT=$?
+URL=$(curl --fail -F file=@"$FILE" -- https://xai.zone) ; EXIT=$?
 
 if [ $EXIT -eq 0 ]; then
 	echo "$URL"

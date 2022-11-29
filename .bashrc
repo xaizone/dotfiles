@@ -5,9 +5,6 @@
 ## EXPORTS ##
 export TERM="xterm-256color"
 export HISTCONTROL=ignoredups:erasedups
-export EDITOR="nvim"
-export VISUAL="code"
-export BROWSER="firefox"
 
 [[ $- != *i* ]] && return
 

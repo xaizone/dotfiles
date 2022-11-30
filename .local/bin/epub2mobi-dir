@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ ! -d "./mobi" ]; then
+	mkdir ./mobi
+fi
+
+for FILE in *.epub; do 
+    ebook-convert "$FILE" mobi/"${FILE%.*}".mobi > /dev/null
+done

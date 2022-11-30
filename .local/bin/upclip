@@ -1,5 +1,5 @@
 #!/bin/bash
-FILE=~/.local/share/.xclip.png
+FILE=~/.local/share/tmp.png
 xclip -selection clipboard -t image/png -o > $FILE
 upload $FILE
 rm $FILE

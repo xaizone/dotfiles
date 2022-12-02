@@ -8,7 +8,7 @@ else
   bg="$1"
 fi
 
-convert "$bg" ~/.local/share/bg.jpg
+convert -size 1920x1080 "$bg" ~/.local/share/bg.jpg
 xwallpaper --zoom ~/.local/share/bg.jpg
 wal -c
 wal -n -q -i ~/.local/share/bg.jpg

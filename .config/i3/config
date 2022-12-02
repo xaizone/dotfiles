@@ -6,11 +6,18 @@ set $terminal st
 set $menu "rofi -show run"
 
 floating_modifier $mod
-tiling_drag modifier titlebar
-font pango:DejaVu Sans Mono 12
+tiling_drag modifier
+font pango:DejaVu Sans Mono 10
 
 # === [ BAR ] === #
-exec_always --no-startup-id polybar
+# exec_always --no-startup-id polybar
+
+bar {
+    position top
+    tray_output none
+    separator_symbol "-"
+    status_command i3status -c ~/.config/i3/status
+}
 
 # === [ KEYBINDS ] === #
 
@@ -120,9 +127,9 @@ assign [class="discord"] 3
 
 # === [ LOOKS ] === #
 
-gaps inner 10
-gaps outer 10
-for_window [class="^.*"] border pixel 1
+gaps inner 5
+gaps outer 5
+for_window [class="^.*"] border pixel 2
 
 # === [ MODES ] === #
 

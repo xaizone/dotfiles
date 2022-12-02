@@ -30,6 +30,7 @@ set -o noclobber
 
 # GENERAL
 alias vim='nvim'
+alias nano='nvim'
 
 # LS
 alias ls='ls --color=always'

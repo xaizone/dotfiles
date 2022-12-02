@@ -1,0 +1,29 @@
+general {
+        colors = true
+        interval = 1
+}
+
+order += "cpu_usage"
+order += "memory"
+order += "volume master"
+order += "time"
+
+cpu_usage {
+        format = "cpu: %usage"
+}
+
+memory {
+        format = "ram: %percentage_used"
+}
+
+volume master {
+        format = "vol: %volume"
+        format_muted = "vol: muted (%volume)"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
+
+time {
+        format = "%Y-%m-%d %H:%M:%S"
+}

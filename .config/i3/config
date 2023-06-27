@@ -1,0 +1,150 @@
+# === [ GENERAL SETTINGS ] === #
+
+set $mod Mod4
+set $browser firefox
+set $terminal alacritty
+set $menu dmenu_run
+
+floating_modifier $mod
+tiling_drag modifier
+font terminus 
+
+# === [ BAR ] === #
+
+bar {
+    position top 
+    tray_output none
+    separator_symbol "-"
+    status_command i3status -c ~/.config/i3/status
+}
+
+# === [ KEYBINDS ] === #
+
+# mod+return - start a terminal
+bindsym $mod+Return exec --no-startup-id $terminal
+
+# mod+d - run launcher
+bindsym $mod+d exec --no-startup-id $menu
+
+# mod+q - kill focused window
+bindsym $mod+q kill
+
+# mod+h,j,k,l - change focused window (vi)
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# mod+left,down,up,right - change focused window (arrow keys)
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# mod+shift+h,j,k,l - move focused window (vi)
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# mod+shift+left,down,up,right - move focused window (arrow keys)
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# mod+f - enter fullscreen on focused window
+bindsym $mod+f fullscreen toggle
+
+# mod+t - toggle layout split
+bindsym $mod+t layout toggle split
+
+# mod+v - toggle new window splitting
+bindsym $mod+v split toggle
+
+# mod+g - toggle floating / tiling
+bindsym $mod+g floating toggle
+
+# mod+space - toggle focus between floating / tiling windows
+bindsym $mod+space focus mode_toggle
+
+# mod+1,...,9 - switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+
+# mod+shift+1,...,9 - move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+
+# printsc - take fullscreen screenshot and copy to clipboard
+bindsym Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+
+# shift+printsc - take selection screenshot and copy to clipboard
+bindsym Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+
+# mod+shift+c - reload i3 configuration
+bindsym $mod+Shift+c reload
+
+# mod+shift+r - restart i3
+bindsym $mod+Shift+r restart
+
+# mod+shift+escape - exit i3
+bindsym $mod+Shift+Escape exec --no-startup-id "i3-msg exit"
+
+# === [ KEYBINDS - APPLICATIONS ] === #
+
+# mod+w - open browser
+bindsym $mod+w exec --no-startup-id $browser
+
+# mod+e - open newsboat
+bindsym $mod+e exec --no-startup-id $terminal -e newsboat
+
+# ctrl+shift+escape - open htop
+bindsym Ctrl+Shift+Escape exec --no-startup-id $terminal -e htop
+
+# === [ ASSIGN WORKSPACE ] === #
+
+# 2: www
+assign [class="firefox"] 2
+
+# 3: chat
+assign [class="discord"] 3
+
+# === [ LOOKS ] === #
+
+gaps inner 5
+for_window [class="^.*"] border pixel 2
+
+# === [ MODES ] === #
+
+# mod+r - resize windows with keyboard
+mode "resize" {
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"

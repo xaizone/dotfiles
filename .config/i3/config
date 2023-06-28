@@ -7,7 +7,29 @@ set $menu dmenu_run
 
 floating_modifier $mod
 tiling_drag modifier
-font terminus 
+
+# === [ LOOKS ] === #
+
+font terminus
+gaps inner 5
+
+for_window [class="^.*"] border pixel 1
+
+set $bg #282828
+set $red #cc241d
+set $green #98971a
+set $yellow #d79921
+set $blue #458588
+set $purple #b16286
+set $aqua #689d68
+set $gray #a89984
+set $darkgray #1d2021
+set $lightgray #bdae93
+
+client.focused $purple $lightgray $bg $yellow $yellow
+client.focused_inactive $purple $darkgray $lightgray $yellow $darkgray
+client.unfocused $darkgray $darkgray $lightgray $yellow $darkgray
+client.urgent $red $red $white $red $red
 
 # === [ BAR ] === #
 
@@ -16,6 +38,14 @@ bar {
     tray_output none
     separator_symbol "-"
     status_command i3status -c ~/.config/i3/status
+    colors {
+        background $bg
+        statusline $lightgray
+        focused_workspace $lightgray $lightgray $bg
+        inactive_workspace $darkgray $darkgray $lightgray
+        active_workspace $darkgray $darkgray $lightgray
+        urgent_workspace $red $red $bg
+    }
 }
 
 # === [ KEYBINDS ] === #
@@ -123,11 +153,6 @@ assign [class="firefox"] 2
 
 # 3: chat
 assign [class="discord"] 3
-
-# === [ LOOKS ] === #
-
-gaps inner 5
-for_window [class="^.*"] border pixel 2
 
 # === [ MODES ] === #
 

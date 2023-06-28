@@ -1,0 +1,5 @@
+[user]
+	name = xaizone
+	email = git@xaizone.eu
+[init]
+	defaultBranch = main

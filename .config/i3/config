@@ -27,7 +27,7 @@ set $darkgray #1d2021
 set $lightgray #bdae93
 
 client.focused $purple $lightgray $bg $yellow $yellow
-client.focused_inactive $purple $darkgray $lightgray $yellow $darkgray
+client.focused_inactive $purple $darkgray $lightgray $lightgray $darkgray
 client.unfocused $darkgray $darkgray $lightgray $yellow $darkgray
 client.urgent $red $red $white $red $red
 
@@ -41,7 +41,7 @@ bar {
     colors {
         background $bg
         statusline $lightgray
-        focused_workspace $lightgray $lightgray $bg
+        focused_workspace $yellow $yellow $bg
         inactive_workspace $darkgray $darkgray $lightgray
         active_workspace $darkgray $darkgray $lightgray
         urgent_workspace $red $red $bg
@@ -136,10 +136,10 @@ bindsym $mod+Shift+8 move container to workspace 8; workspace 8
 bindsym $mod+Shift+9 move container to workspace 9; workspace 9
 
 # printsc - take fullscreen screenshot and copy to clipboard
-bindsym Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+bindsym Print exec --no-startup-id maim -u | xclip -selection clipboard -t image/png
 
 # shift+printsc - take selection screenshot and copy to clipboard
-bindsym Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+bindsym Shift+Print exec --no-startup-id maim -u -s | xclip -selection clipboard -t image/png
 
 # mod+shift+r - restart i3
 bindsym $mod+Shift+r restart

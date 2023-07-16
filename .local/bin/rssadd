@@ -1,0 +1,20 @@
+#!/bin/sh
+
+prompt="$(dmenu -p "url:" -i)"
+rss="${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/urls"
+
+if echo "$prompt" | grep -q "https*://\S\+\.[A-Za-z]\+\S*" ; then
+	url="$prompt"
+else
+	url="$(grep -Eom1 '<[^>]+(rel="self"|application/[a-z]+\+xml)[^>]+>' "$1" |
+		grep -o "https?://[^\" ]")"
+
+	echo "$url" | grep -q "https*://\S\+\.[A-Za-z]\+\S*" ||
+		notify-send "incorrect url" && exit 1
+fi
+
+if awk '{print $1}' "$rss" | grep "^$url$" > /dev/null; then
+	notify-send "rss feed already present"
+else
+	echo "$url" >> "$rss" && notify-send "rss added successfully"
+fi

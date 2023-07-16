@@ -1,6 +1,5 @@
-#!/bin/bash
+#!/bin/sh
 
-activemonitors="$(xrandr | awk '/ connected/ && /[[:digit:]]x[[:digit:]].*+/{print $1}')"
-monitor="$(echo "$activemonitors" | dmenu -p "display:" -i)"
+monitor="$(xrandr | awk '/ connected/ && /[[:digit:]]x[[:digit:]].*+/{print $1}' | dmenu -p "monitor:" -i)"
 resolution="$(xrandr -q | awk -v disp="$monitor" '$1 == disp {getline; while ($0 ~ /^[[:blank:]]/) {gsub(/^[[:blank:]]+/, ""); print $1; getline}}' | dmenu -p "resolution:" -i)"
 xrandr --output $monitor --mode $resolution

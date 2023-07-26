@@ -59,9 +59,18 @@ for_window [class="^steam$" title="^Settings$"] floating enable
 # 2: www
 assign [class="firefox"] 2
 
-# 3: game + chat
+# 3: chat
 assign [class="discord"] 3
-assign [class="steam"] 3
+
+# 4: game launchers
+assign [class="steam"] 4
+assign [class="lutris"] 4
+
+# 8: music
+assign [class="spotify"] 8
+
+# 9: record
+assign [class="obs"] 9
 
 # === [ KEYBINDS ] === #
 

@@ -67,7 +67,7 @@ assign [class="steam"] 4
 assign [class="lutris"] 4
 
 # 8: music
-assign [class="spotify"] 8
+for_window [class="Spotify"] move to workspace 8
 
 # 9: record
 assign [class="obs"] 9

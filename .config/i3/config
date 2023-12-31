@@ -159,8 +159,8 @@ bindsym $mod+Shift+r restart
 # mod+w - open browser
 bindsym $mod+w exec --no-startup-id $browser
 
-# mod+e - open newsboat
-bindsym $mod+e exec --no-startup-id $terminal -e newsboat
+# mod+e - open nnn
+bindsym $mod+e exec --no-startup-id $terminal -e nnn
 
 # ctrl+shift+escape - open htop
 bindsym Ctrl+Shift+Escape exec --no-startup-id $terminal -e htop

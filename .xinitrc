@@ -1,6 +1,7 @@
 #!/bin/sh
 
 xset r rate 300 50 &
+xrandr -s 2560x1440 -r 360 &
 dunst &
 unclutter &
 

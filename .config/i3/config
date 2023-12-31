@@ -51,8 +51,9 @@ bar {
 # === [ FLOATING RULES ] === #
 
 # steam 
-for_window [class="^steam$" title="^Friends List$"] floating enable
-for_window [class="^steam$" title="^Settings$"] floating enable
+for_window [class="^steam$"] floating enable
+for_window [class="^Steam$"] floating enable
+for_window [class="^steam$" title="^Steam$"] floating disable
 
 # === [ ASSIGN WORKSPACES ] === #
 

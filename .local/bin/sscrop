@@ -1,0 +1,6 @@
+#!/bin/bash
+maim -u /tmp/screenshot.png
+feh -x -F /tmp/screenshot.png & id=$!
+maim -u -s | xclip -sel c -t image/png
+kill $id
+rm /tmp/screenshot.png

@@ -6,5 +6,6 @@ xrandr --dpi 96 &
 xrdb ~/.Xresources &
 dunst &
 unclutter &
+xsetroot -solid "#111111"
 
 exec i3 > /dev/null 2>&1

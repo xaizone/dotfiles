@@ -47,11 +47,6 @@ alias grep='grep --color=auto'
 alias lg='lazygit'
 alias dots='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
-# USER
-alias cp='cp -i'
-alias mv='mv -i'
-alias rm='rm -i'
-
 ## ARCHIVE EXTRACTION ##
 # usage: ex <file>
 ex ()

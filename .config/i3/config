@@ -67,7 +67,7 @@ for_window [class="Element"] move to workspace 3
 
 # 4: game launchers
 assign [class="steam"] 4
-assign [class="lutris"] 4
+for_window [class="Lutris"] move to workspace 4
 
 # 8: music
 for_window [class="Spotify"] move to workspace 8

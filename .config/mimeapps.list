@@ -1,8 +1,13 @@
 [Default Applications]
 text/plain=text.desktop
 text/x-shellscript=text.desktop;
+text/html=firefox.desktop;
 image/png=img.desktop
 image/jpeg=img.desktop
 image/gif=img.desktop
 video/x-matroska=video.desktop
 video/mp4=video.desktop
+application/postscript=pdf.desktop;
+application/pdf=pdf.desktop;
+x-scheme-handler/http=firefox.desktop;
+x-scheme-handler/https=firefox.desktop;

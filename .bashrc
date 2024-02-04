@@ -45,6 +45,7 @@ alias grep='grep --color=auto'
 
 # GIT
 alias lg='lazygit'
+alias dlg='lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dots='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 ## ARCHIVE EXTRACTION ##

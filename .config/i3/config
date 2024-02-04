@@ -192,9 +192,10 @@ mode "$resize_mode" {
 bindsym $mod+r mode "$resize_mode"
 
 # mod+shift+backspace - power off menu
-set $power_mode [l] lock, [r] reboot, [s] shutdown
+set $power_mode [l] lock, [e] logout, [r] reboot, [s] shutdown
 mode "$power_mode" {
     bindsym l exec --no-startup-id i3lock && sleep 1, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym s exec --no-startup-id systemctl poweroff -i, mode "default"  
 

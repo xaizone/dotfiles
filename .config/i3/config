@@ -49,6 +49,14 @@ bar {
     }
 }
 
+# === [ SCRATCHPAD ] === #
+
+exec --no-startup-id $terminal --class pulse,pulse -e pulsemixer
+for_window [class="pulse"] floating enable, resize set 1000 600, move scratchpad
+
+# mod+m - open pulsemixer scratchpad
+bindsym $mod+m [class="pulse"] scratchpad show; move position center
+
 # === [ FLOATING RULES ] === #
 
 # steam 

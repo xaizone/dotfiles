@@ -44,11 +44,14 @@ alias free='free -m'
 alias grep='grep --color=auto'
 
 # GIT
-alias lg='lazygit'
-alias dlg='lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias lg='/usr/bin/lazygit'
+alias dlg='/usr/bin/lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dots='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
-## ARCHIVE EXTRACTION ##
+
+## FUNCTIONS ##
+
+# ARCHIVE EXTRACTION #
 # usage: ex <file>
 ex ()
 {
@@ -74,6 +77,14 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
+
+# MAKE SH #
+# usage: mksh <file>
+mksh(){ touch "$1" && chmod +x "$1" && vim "$1"; }
+
+# FIND IN FILE #
+# usage: fif <file> <string>
+fif(){ grep -rwn "$1" -e "$2"; }
 
 ## CHANGE TERMINAL TITLE ##
 case ${TERM} in xterm*|rxvt*|Eterm*|aterm|kterm|gnome*|alacritty|st|konsole*)

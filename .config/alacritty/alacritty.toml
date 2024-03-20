@@ -22,6 +22,9 @@ yellow = "#d79921"
 background = "#282828"
 foreground = "#ebdbb2"
 
+[font]
+size = 13
+
 [font.normal]
 family = "terminus"
 

@@ -35,10 +35,9 @@ client.urgent $red $red $white $red $red
 # === [ BAR ] === #
 
 bar {
-    position top 
+    position top
     tray_output primary
-    separator_symbol "-"
-    status_command i3status -c ~/.config/i3/status
+    status_command sbar
     colors {
         background $bg
         statusline $lightgray

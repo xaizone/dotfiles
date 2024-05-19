@@ -1,3 +1,3 @@
 #!/bin/sh
 
-grep -v "#" ~/.local/share/emoji_list | dmenu -i -l 20 | awk '{print $1}' | tr -d '\n' | xclip -sel c
+grep -v "#" ~/.local/share/emoji_list | dmenu -l 20 | awk '{print $1}' | tr -d '\n' | xclip -sel c

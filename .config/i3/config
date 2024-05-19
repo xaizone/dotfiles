@@ -70,14 +70,11 @@ assign [class="firefox"] 2
 
 # 3: chat
 assign [class="discord"] 3
-for_window [class="Element"] move to workspace 3
+assign [class="vesktop"] 3
 
 # 4: game launchers
 assign [class="steam"] 4
 for_window [class="Lutris"] move to workspace 4
-
-# 8: music
-for_window [class="Spotify"] move to workspace 8
 
 # 9: record
 assign [class="obs"] 9

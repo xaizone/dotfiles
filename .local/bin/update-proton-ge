@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# credits:
+# - timvisee (https://github.com/timvisee/update-proton-ge)
+
+repo=https://github.com/GloriousEggroll/proton-ge-custom
+latest_release_url=$repo/releases/latest
+proton_dir=~/.steam/root/compatibilitytools.d
+
+# Find latest version tag
+release_url=$(curl -Ls -o /dev/null -w %{url_effective} $latest_release_url)
+version=${release_url##*/}
+notify-send "🔁 Proton GE Updater" "Found latest version: $version"
+
+# Determine download URL and install path
+download_url=$repo/releases/download/$version/$version.tar.gz
+install_dir=$proton_dir/$version
+download_file=~/.cache/$version.tar.gz
+
+# Exit if already installed
+if [ -d $install_dir ]; then
+    notify-send "🔁 Proton GE Updater" "$version is already installed at: $install_dir"
+    exit
+fi
+
+# Download, extract and delete archive
+notify-send "🔁 Proton GE Updater" "Downloading $version in the background..."
+wget -q --show-progress $download_url -O $download_file
+mkdir -p $proton_dir
+tar -xzf $download_file --directory $proton_dir
+rm $download_file
+
+notify-send "🔁 Proton GE Updater" "Installation of $version completed."

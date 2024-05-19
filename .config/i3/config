@@ -3,7 +3,7 @@
 set $mod Mod4
 set $browser firefox
 set $terminal alacritty
-set $menu dmenu_run
+set $menu dmenu_run -i
 set $fm nnn -H
 
 floating_modifier $mod

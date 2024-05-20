@@ -1,3 +1,5 @@
+vim.cmd 'colorscheme vim'
+vim.opt.termguicolors = false
 vim.opt.clipboard = "unnamedplus"
 vim.opt.guicursor = ""
 vim.opt.nu = true

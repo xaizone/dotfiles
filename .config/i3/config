@@ -13,6 +13,8 @@ tiling_drag modifier
 
 font terminus
 
+gaps inner 5
+
 default_border pixel 1
 default_floating_border pixel 1
 

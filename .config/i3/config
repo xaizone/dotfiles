@@ -12,11 +12,8 @@ tiling_drag modifier
 # === [ LOOKS ] === #
 
 font terminus
-
 gaps inner 5
-
-default_border pixel 1
-default_floating_border pixel 1
+for_window [class="^.*"] border pixel 1
 
 set $bg #282828
 set $red #cc241d

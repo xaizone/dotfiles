@@ -1,32 +1,11 @@
-#!/bin/env sh
-
-sec=0
-
-update_cpu () { 
-	cpu="$(grep -o "^[^ ]*" /proc/loadavg )" 
-}
-
-update_memory () { 
-	memory="$(free -h | sed -n "2s/\([^ ]* *\)\{2\}\([^ ]*\).*/\2/p")"
-}
-
-update_time () { 
-	time="$(date "+[%d-%m-%Y] [%H:%M]")" 
-}
-
-display () { 
-	printf "%s\n" " [MEM: $memory] [CPU: $cpu] $time "
-}
+#!/bin/sh
 
 while true
 do
-	sleep 1 & wait && { 
-		[ $((sec % 5 )) -eq 0 ] && update_time
-		[ $((sec % 5 )) -eq 0 ] && update_cpu
-		[ $((sec % 15)) -eq 0 ] && update_memory
-
-		[ $((sec % 5 )) -eq 0 ] && display
-		sec=$((sec + 1))
-	}
+	cpu="$(grep -o "^[^ ]*" /proc/loadavg )" 
+	memory="$(free -h | sed -n "2s/\([^ ]* *\)\{2\}\([^ ]*\).*/\2/p")"
+	time="$(date "+[%d-%m-%Y %H:%M]")" 
+	xsetroot -name " [MEM: $memory] [CPU: $cpu] $time "
+    sleep 5
 done 
 

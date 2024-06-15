@@ -6,6 +6,7 @@ lxpolkit &
 dunst &
 unclutter &
 xsetroot -solid "#111111" &
+sbar &
 xrdb ~/.Xresources
 
-exec i3 > /dev/null 2>&1
+exec dwm > /dev/null 2>&1

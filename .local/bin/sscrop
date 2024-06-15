@@ -1,7 +1,0 @@
-#!/bin/sh
-
-maim -u /tmp/screenshot.png
-nsxiv -f --anti-alias=no -b /tmp/screenshot.png & id=$!
-maim -u -s | xclip -sel c -t image/png
-kill $id
-rm /tmp/screenshot.png

@@ -5,7 +5,7 @@ do
 	cpu="$(grep -o "^[^ ]*" /proc/loadavg )" 
 	memory="$(free -h | sed -n "2s/\([^ ]* *\)\{2\}\([^ ]*\).*/\2/p")"
 	time="$(date "+[%d-%m-%Y %H:%M]")" 
-	xsetroot -name " [MEM: $memory] [CPU: $cpu] $time "
+	xsetroot -name "[MEM: $memory] [CPU: $cpu] $time"
     sleep 5
 done 
 

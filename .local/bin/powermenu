@@ -1,0 +1,18 @@
+#!/bin/sh
+
+option=$(echo -e "shutdown\nrestart\nlogout" | dmenu -i -p "powermenu")
+
+case $option in
+    shutdown)
+        systemctl poweroff -i
+        ;;
+    restart)
+        systemctl reboot
+        ;;
+    logout)
+        pkill dwm
+        ;;
+    *)
+        exit 1
+        ;;
+esac

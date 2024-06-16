@@ -1,7 +1,7 @@
 Xcursor.theme: Adwaita
 Xcursor.size: 24
 dmenu.font: terminus:size=12
-dmenu.background: #282828
-dmenu.foreground: #ebdbb2
-dmenu.selbackground: #d79921
-dmenu.selforeground: #282828
+dmenu.background: #1d1f21
+dmenu.foreground: #707070
+dmenu.selbackground: #1d1f21
+dmenu.selforeground: #c5c8c6

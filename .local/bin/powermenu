@@ -1,15 +1,21 @@
 #!/bin/sh
 
-option=$(echo -e "shutdown\nrestart\nlogout" | dmenu -i -p "powermenu")
+option=$(echo -e "Shutdown\nRestart\nSuspend\nLock\nLogout" | dmenu -i -p "What to do with the system?")
 
 case $option in
-    shutdown)
+    Shutdown)
         systemctl poweroff -i
         ;;
-    restart)
+    Restart)
         systemctl reboot
         ;;
-    logout)
+    Suspend)
+        systemctl suspend
+        ;;
+    Lock)
+        xset dpms force off
+        ;;
+    Logout)
         pkill dwm
         ;;
     *)

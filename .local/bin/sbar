@@ -1,11 +1,32 @@
 #!/bin/sh
 
+interface="enp13s0"
+
+rx_old=$(cat /sys/class/net/${interface}/statistics/rx_bytes)
+tx_old=$(cat /sys/class/net/${interface}/statistics/tx_bytes)
+
 while true
 do
-	cpu="$(grep -o "^[^ ]*" /proc/loadavg )" 
-	memory="$(free -h | sed -n "2s/\([^ ]* *\)\{2\}\([^ ]*\).*/\2/p")"
-	time="$(date "+[%d-%m-%Y %H:%M]")" 
-	xsetroot -name "[MEM: $memory] [CPU: $cpu] $time"
-    sleep 5
+    eval $(awk '/^cpu /{print "cpu_idle_now=" $5 "; cpu_total_now=" $2+$3+$4+$5 }' /proc/stat)
+    cpu_interval=$((cpu_total_now-${cpu_total_old:-0}))
+    let cpu="100 * ($cpu_interval - ($cpu_idle_now-${cpu_idle_old:-0})) / $cpu_interval"
+
+    memory="$(free -m | awk 'NR==2 {print $3}')"
+    time="$(date "+%d-%m-%Y | %H:%M")"
+
+    rx_now=$(cat /sys/class/net/${interface}/statistics/rx_bytes)
+    tx_now=$(cat /sys/class/net/${interface}/statistics/tx_bytes)
+
+    let rx_rate=($rx_now-$rx_old)/1024
+    let tx_rate=($tx_now-$tx_old)/1024
+
+    xsetroot -name "${memory}M < ${cpu}% < ${rx_rate}K | ${tx_rate}K < $time"
+
+    rx_old=$rx_now
+    tx_old=$tx_now
+    cpu_idle_old=$cpu_idle_now
+    cpu_total_old=$cpu_total_now
+
+    sleep 1
 done 
 

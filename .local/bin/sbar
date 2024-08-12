@@ -1,6 +1,6 @@
 #!/bin/sh
 
-interface="enp13s0"
+interface="enp14s0"
 
 rx_old=$(cat /sys/class/net/${interface}/statistics/rx_bytes)
 tx_old=$(cat /sys/class/net/${interface}/statistics/tx_bytes)
